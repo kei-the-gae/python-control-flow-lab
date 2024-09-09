@@ -113,4 +113,39 @@ def calculate_dog_years():
         dog_age = age * 10
     print(f'The dog\'s age in dog years is {dog_age}.')
 # Call the function
-calculate_dog_years()
+# calculate_dog_years()
+
+# Exercise 4: Weather Advice
+#
+# Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
+#
+# Requirements:
+# - The script should prompt the user to enter if it is cold (yes/no).
+# - Then, ask if it is raining (yes/no).
+# - Use logical operators to determine clothing advice:
+#   - If it is cold AND raining, print "Wear a waterproof coat."
+#   - If it is cold BUT NOT raining, print "Wear a warm coat."
+#   - If it is NOT cold but raining, print "Carry an umbrella."
+#   - If it is NOT cold AND NOT raining, print "Wear light clothing."
+#
+# Hints:
+# - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
+
+def weather_advice():
+    # Your control flow logic goes here
+    is_cold = input('Is it cold? (yes/no): ').lower()
+    while not is_cold == 'yes' and not is_cold == 'no':
+        is_cold = input('Invalid input. Please enter "yes" or "no": ').lower()
+    is_raining = input('Is it raining? (yes/no): ')
+    while not is_raining == 'yes' and not is_raining == 'no':
+        is_raining = input('Invalid input. Please enter "yes" or "no": ').lower()
+    if is_cold == 'yes' and is_raining == 'yes':
+        print('Wear a waterproof coat.')
+    elif is_cold == 'yes' and is_raining == 'no':
+        print('Wear a warm coat.')
+    elif is_cold == 'no' and is_raining == 'yes':
+        print('Carry an umbrella.')
+    elif is_cold == 'no' and is_raining == 'no':
+        print('Wear light clothing.')
+# Call the function
+weather_advice()
