@@ -40,16 +40,15 @@ def check_letter():
     # Your control flow logic goes here
     vowels = ('a', 'e', 'i', 'o', 'u')
     letter = input('Enter a letter: ').lower()
-    if letter.isalpha():
-        for vowel in vowels:
-            if letter == vowel:
-                print(f'The letter {letter} is a vowel.')
-                break
-            else:
-                print(f'The letter {letter} is a consonant.')
-                break
-    else:
-        print('Invalid input.')
+    while not letter.isalpha():
+        letter = input('Invalid input. Please enter a letter: ')
+    for vowel in vowels:
+        if letter == vowel:
+            print(f'The letter {letter} is a vowel.')
+            break
+        else:
+            print(f'The letter {letter} is a consonant.')
+            break
 # Call the function
 check_letter()
 
