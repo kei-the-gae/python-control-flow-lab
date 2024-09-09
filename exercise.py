@@ -71,11 +71,11 @@ check_letter()
 def check_voting_eligibility():
     # Your control flow logic goes here
     age = input('Please input your age: ')
-    votingAge = 18
+    voting_age = 18
     while not age.isdecimal():
         age = input('Invalid input. Please enter your age as a whole positive number: ')
     age = int(age)
-    if age >= votingAge:
+    if age >= voting_age:
         print('You are eligible to vote.')
     else:
         print('You are not eligible to vote.')
