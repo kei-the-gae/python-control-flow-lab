@@ -15,7 +15,6 @@ def print_greeting():
     python_is_fun = True
     if python_is_fun:
         print("Python is fun!")
-
 # Call the function
 print_greeting()
 
@@ -39,9 +38,11 @@ print_greeting()
 def check_letter():
     # Your control flow logic goes here
     vowels = ('a', 'e', 'i', 'o', 'u')
+
     letter = input('Enter a letter: ').lower()
     while not letter.isalpha():
         letter = input('Invalid input. Please enter a letter: ').lower()
+
     for vowel in vowels:
         if letter == vowel:
             print(f'The letter {letter} is a vowel.')
@@ -50,7 +51,7 @@ def check_letter():
             print(f'The letter {letter} is a consonant.')
             break
 # Call the function
-# check_letter()
+check_letter()
 
 # Exercise 2: Old enough to vote?
 #
@@ -70,17 +71,19 @@ def check_letter():
 
 def check_voting_eligibility():
     # Your control flow logic goes here
-    age = input('Please input your age: ')
     voting_age = 18
+
+    age = input('Please input your age: ')
     while not age.isdecimal():
         age = input('Invalid input. Please enter your age as a whole positive number: ')
     age = int(age)
+
     if age >= voting_age:
         print('You are eligible to vote.')
     else:
         print('You are not eligible to vote.')
 # Call the function
-# check_voting_eligibility()
+check_voting_eligibility()
 
 # Exercise 3: Calculate Dog Years
 #
@@ -106,6 +109,7 @@ def calculate_dog_years():
     while not age.isdecimal():
         age = input('Invalid input. Please enter the dog\'s age as a whole positive number: ')
     age = int(age)
+
     if age > 2:
         age = age - 2
         dog_age = (age * 7) + (2 * 10)
@@ -113,7 +117,7 @@ def calculate_dog_years():
         dog_age = age * 10
     print(f'The dog\'s age in dog years is {dog_age}.')
 # Call the function
-# calculate_dog_years()
+calculate_dog_years()
 
 # Exercise 4: Weather Advice
 #
@@ -136,9 +140,11 @@ def weather_advice():
     is_cold = input('Is it cold? (yes/no): ').lower()
     while not is_cold == 'yes' and not is_cold == 'no':
         is_cold = input('Invalid input. Please enter "yes" or "no": ').lower()
+
     is_raining = input('Is it raining? (yes/no): ')
     while not is_raining == 'yes' and not is_raining == 'no':
         is_raining = input('Invalid input. Please enter "yes" or "no": ').lower()
+
     if is_cold == 'yes' and is_raining == 'yes':
         print('Wear a waterproof coat.')
     elif is_cold == 'yes' and is_raining == 'no':
@@ -148,7 +154,7 @@ def weather_advice():
     elif is_cold == 'no' and is_raining == 'no':
         print('Wear light clothing.')
 # Call the function
-# weather_advice()
+weather_advice()
 
 # Exercise 5: What's the Season?
 #
@@ -181,10 +187,12 @@ def determine_season():
     month = input('Enter the month of the year (Jan - Dec): ').lower()
     while not month in months:
         month = input('Invalid input. Please enter a month of the year by typing the first three letters of the month name (Jan - Dec): ')
+
     day = input('Enter the day of the month: ')
     while not day.isdecimal() or not int(day) in range(1, days[months.index(month)]):
         day = input(f'Invalid input. There are {days[months.index(month)]} days in {month}. Please enter a whole positive number between 1 and {days[months.index(month)]}: ')
     day = int(day)
+
     while not season:
         if month in spring:
             if (month == 'mar' and not day in range(20, 32)) or (month == 'jun' and not day in range(1, 21)):
@@ -207,6 +215,7 @@ def determine_season():
         if month in winter:
             season = 'winter'
             break
+
     print(f'{month} {day} is in {season}.')
 # Call the function
 determine_season()
