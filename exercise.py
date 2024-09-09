@@ -41,7 +41,7 @@ def check_letter():
     vowels = ('a', 'e', 'i', 'o', 'u')
     letter = input('Enter a letter: ').lower()
     while not letter.isalpha():
-        letter = input('Invalid input. Please enter a letter: ')
+        letter = input('Invalid input. Please enter a letter: ').lower()
     for vowel in vowels:
         if letter == vowel:
             print(f'The letter {letter} is a vowel.')
@@ -104,7 +104,7 @@ def calculate_dog_years():
     # Your control flow logic goes here
     age = input('Input a dog\'s age: ')
     while not age.isdecimal():
-        age - input('Invalid input. Please enter the dog\'s age as a whole positive number: ')
+        age = input('Invalid input. Please enter the dog\'s age as a whole positive number: ')
     age = int(age)
     if age > 2:
         age = age - 2
